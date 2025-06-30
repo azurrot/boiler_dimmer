@@ -1,0 +1,17 @@
+mqtt:
+  light:
+    - name: "Boiler Dimmer"
+      command_topic: "esp12/dimmer/set"
+      state_topic: "esp12/dimmer/state"
+      brightness_command_topic: "esp12/dimmer/set"
+      brightness_scale: 100
+      payload_on: "ON"
+      payload_off: "OFF"
+      retain: true
+      qos: 0
+      
+  sensor:
+    - name: "Boiler Dimmer Raw"
+      state_topic: "esp12/dimmer/state"
+      unit_of_measurement: "%"
+      value_template: "{{ value | int }}"
